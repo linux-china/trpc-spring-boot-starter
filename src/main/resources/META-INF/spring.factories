@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.mvnsearch.spring.boot.trpc.flux.TrpcWebFluxConfigurer,\
+org.mvnsearch.spring.boot.trpc.mvc.TrpcWebMvcConfigurer
