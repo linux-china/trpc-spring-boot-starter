@@ -20,14 +20,24 @@ Spring Boot starter for [tRPC](https://trpc.io/)
 
 ```java
 
-@RestController
+import org.mvnsearch.spring.boot.trpc.TrpcInput;
+import org.mvnsearch.spring.boot.trpc.TrpcMutate;
+import org.mvnsearch.spring.boot.trpc.TrpcQuery;
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class GreetingTrpcController {
     record Hello(String name) {
     }
 
-    @GetMapping("/greeting.hello")
+    @TrpcQuery("/greeting.hello")
     public TrpcResponse<String> hello(@TrpcInput Hello hello) {
         return TrpcResponse.of("Hello " + hello.name);
+    }
+
+    @TrpcMutate("/poster.createPost")
+    public TrpcResponse<Poster> createPost(@TrpcInput Poster poster) {
+        return TrpcResponse.of(new Poster(UUID.randomUUID().toString(), poster.title, poster.text));
     }
 }
 ```
@@ -41,26 +51,6 @@ Content-Type: application/json
 
 {
   "name": "world"
-}
-```
-
-# FAQ
-
-### `@TrpcInput` could be used as tRPC mutate?
-
-Please use `@RequestBody` instead of `@TrpcInput` for tRPC mutate, and `@RequestBody` is a standard and works well with tRPC input JSON data with POST.
-
-```java
-
-@RestController
-public class PosterTrpcController {
-    record Poster(@Nullable String id, String title, String text) {
-    }
-
-    @PostMapping("/poster.createPost")
-    public TrpcResponse<Poster> createPost(@RequestBody Poster poster) {
-        return TrpcResponse.of(new Poster(UUID.randomUUID().toString(), poster.title, poster.text));
-    }
 }
 ```
 
