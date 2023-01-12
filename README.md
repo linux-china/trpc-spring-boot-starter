@@ -58,6 +58,15 @@ Content-Type: application/json
 {
   "name": "world"
 }
+
+### trpc mutate
+TRPCM http://localhost:8080/poster.createPost
+Content-Type: application/json
+
+{
+  "title": "title",
+  "text": "hello world"
+}
 ```
 
 ### References
