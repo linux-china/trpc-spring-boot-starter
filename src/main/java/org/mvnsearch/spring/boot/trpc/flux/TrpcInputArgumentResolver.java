@@ -1,6 +1,7 @@
 package org.mvnsearch.spring.boot.trpc.flux;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.mvnsearch.spring.boot.trpc.TrpcInput;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.http.HttpMethod;
@@ -24,7 +25,7 @@ public class TrpcInputArgumentResolver extends AbstractMessageReaderArgumentReso
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        return parameter.hasParameterAnnotation(RequestBody.class);
+        return parameter.hasParameterAnnotation(TrpcInput.class);
     }
 
     @Override
