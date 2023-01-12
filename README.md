@@ -16,7 +16,7 @@ Spring Boot starter for [tRPC](https://trpc.io/)
 </dependency>
 ```
 
-* Write controller for tRPC query
+* Write controller for tRPC query/mutate
 
 ```java
 
@@ -35,6 +35,9 @@ public class GreetingTrpcController {
         return TrpcResponse.of("Hello " + hello.name);
     }
 
+    record Poster(String id, String title, String text) {
+    }
+    
     @TrpcMutate("/poster.createPost")
     public TrpcResponse<Poster> createPost(@TrpcInput Poster poster) {
         return TrpcResponse.of(new Poster(UUID.randomUUID().toString(), poster.title, poster.text));
