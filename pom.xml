@@ -10,6 +10,7 @@
 
     <name>trpc-spring-boot-starter</name>
     <description>Spring Boot starter tRPC</description>
+    <url>https://github.com/linux-china/trpc-spring-boot-starter</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
