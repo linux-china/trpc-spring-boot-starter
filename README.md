@@ -1,7 +1,7 @@
 Spring Boot Starter tRPC
 =============================================
 
-Spring Boot starter for [tRPC](https://trpc.io/)
+Spring Boot starter for [tRPC](https://trpc.io/), and compatible with webmvc/webflux of Spring Boot 2.x/3.0.
 
 # Get Started
 
@@ -12,7 +12,7 @@ Spring Boot starter for [tRPC](https://trpc.io/)
 <dependency>
     <groupId>org.mvnsearch</groupId>
     <artifactId>trpc-spring-boot-starter</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0</version>
 </dependency>
 ```
 
