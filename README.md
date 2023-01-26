@@ -68,7 +68,15 @@ Content-Type: application/json
   "text": "hello world"
 }
 ```
+      
+# FAQ
 
-### References
+### Could I use Spring Framework 6 HTTP Interface with tRPC?
+             
+Please refer to [tRPC Spring HTTP Interface](https://github.com/linux-china/trpc-http-interface)
+
+# References
 
 * tRPC: https://trpc.io/
+* tRPC testing: https://servicex.sh/docs/tutorial-basics/trpc-testing
+* tRPC Spring HTTP Interface: https://github.com/linux-china/trpc-http-interface
